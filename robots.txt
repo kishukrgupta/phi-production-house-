@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kishukrgupta.github.io/phi-production-house-/sitemap.xml
+Sitemap: https://phiproductionhouse.in/sitemap.xml
