@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#about</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Services Section -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#services</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Portfolio Section -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#portfolio</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Grand Opening & Launch Events -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#grand-opening</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Product Launch Campaigns -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#product-launch</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Car Delivery Edits -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#car-edits</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Creative Process -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#process</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Testimonials -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#testimonials</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://kishukrgupta.github.io/phi-production-house-/#contact</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
