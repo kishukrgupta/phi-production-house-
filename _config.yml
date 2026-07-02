@@ -1,0 +1,4 @@
+include:
+  - robots.txt
+  - sitemap.xml
+  - .nojekyll
