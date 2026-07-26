@@ -54,29 +54,43 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cursor Glow Effect -->
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-logo">
+            PH<span class="logo-accent">I</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Cursor Glow -->
     <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">
+            <a href="#" class="nav-logo" id="navLogo">
                 <span class="logo-phi">PHI</span>
                 <span class="logo-sub">Production House</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#contact" class="nav-cta">Get Started</a>
+            <a href="#contact" class="nav-cta" id="navCta">
+                <span>Start a Project</span>
+            </a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -85,174 +99,241 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ========== HERO ========== -->
     <section class="hero" id="home">
         <div class="hero-bg">
             <div class="hero-gradient"></div>
-            <div class="hero-grid"></div>
-            <div class="hero-particles" id="heroParticles"></div>
+            <div class="hero-grid-pattern"></div>
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
         </div>
+
         <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span>Award-Winning Production House</span>
-            </div>
-            <h1 class="hero-title">
-                <span class="title-line">We Craft</span>
-                <span class="title-line title-gradient">Cinematic Stories</span>
-                <span class="title-line">That <em>Captivate</em></span>
-            </h1>
-            <p class="hero-subtitle">
-                PHI Production House transforms your vision into stunning visual narratives. 
-                From concept to final cut, we deliver premium video content that elevates your brand.
-            </p>
-            <div class="hero-actions">
-                <a href="#portfolio" class="btn btn-primary">
-                    <span>View Our Work</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                    <span>Start a Project</span>
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number" data-target="300">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Projects Delivered</span>
+            <div class="hero-text">
+                <div class="hero-badge reveal">
+                    <span class="badge-dot"></span>
+                    <span>Premium Creative Agency</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Happy Clients</span>
+
+                <h1 class="hero-title reveal stagger-1">
+                    <span class="line">We Create</span>
+                    <span class="line gradient-text">Visual Stories</span>
+                    <span class="line">That <span class="outline-text">Resonate</span></span>
+                </h1>
+
+                <p class="hero-subtitle reveal stagger-2">
+                    PHI Production House transforms bold visions into cinematic experiences. 
+                    We don't just edit videos — we engineer moments that move audiences and elevate brands.
+                </p>
+
+                <div class="hero-actions reveal stagger-3">
+                    <a href="#work" class="btn btn-primary" id="heroCtaPrimary">
+                        <span>Explore Our Work</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary" id="heroCtaSecondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        <span>Start a Project</span>
+                    </a>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Years Experience</span>
+
+                <div class="hero-stats reveal stagger-4">
+                    <div class="hero-stat">
+                        <div class="stat-number"><span data-target="300" class="counter">0</span><span class="stat-suffix">+</span></div>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number"><span data-target="50" class="counter">0</span><span class="stat-suffix">+</span></div>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number"><span data-target="2" class="counter">0</span><span class="stat-suffix">+</span></div>
+                        <span class="stat-label">Years Excellence</span>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="hero-scroll">
-            <div class="scroll-indicator">
-                <div class="scroll-dot"></div>
-            </div>
-            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- ========== MARQUEE TICKER ========== -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item">Video Editing</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Motion Graphics</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Content Creation</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Brand Identity</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Ad Films</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Color Grading</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Sound Design</span><span class="marquee-dot"></span>
+                <span class="marquee-item">VFX</span><span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content">
+                <span class="marquee-item">Video Editing</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Motion Graphics</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Content Creation</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Brand Identity</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Ad Films</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Color Grading</span><span class="marquee-dot"></span>
+                <span class="marquee-item">Sound Design</span><span class="marquee-dot"></span>
+                <span class="marquee-item">VFX</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FEATURED WORK ========== -->
+    <section class="portfolio" id="work">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">About Us</span>
-                <h2 class="section-title">The Vision Behind <span class="text-gradient">PHI</span></h2>
-                <p class="section-subtitle">We are more than a production house — we are storytellers, visual artists, and creative strategists.</p>
+            <div class="portfolio-header">
+                <span class="section-tag reveal">Selected Work</span>
+                <h2 class="section-title reveal stagger-1">Featured <span class="gradient">Projects</span></h2>
+                <p class="section-subtitle reveal stagger-2">A curated selection of our finest cinematic work — crafted with precision and passion.</p>
             </div>
-            <div class="about-grid">
-                <div class="about-card about-card-main">
-                    <div class="about-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                        </svg>
+
+            <div class="portfolio-grid">
+                <!-- Card 1: Grand Opening — Full width -->
+                <article class="portfolio-card reveal" id="portfolioCard1">
+                    <div class="portfolio-card-inner">
+                        <div class="portfolio-card-bg">
+                            <div class="gradient-bg" style="background: linear-gradient(135deg, #1a0533 0%, #2d1b69 40%, #0a0a0b 100%); width:100%; height:100%;"></div>
+                            <video preload="metadata" muted playsinline loop>
+                                <source src="assets/videos/grand_opening/C0005_2_3.mp4#t=3" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="portfolio-card-overlay"></div>
+                        <div class="portfolio-card-content">
+                            <span class="portfolio-card-tag">Event Coverage</span>
+                            <h3 class="portfolio-card-title">Grand Opening & Launch Events</h3>
+                            <p class="portfolio-card-desc">Cinematic event coverage with dramatic storytelling and premium visuals for luxury brand launches.</p>
+                        </div>
+                        <div class="portfolio-card-arrow">
+                            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                    <h3>Our Story</h3>
-                    <p>Founded by <strong>Kishu Gupta</strong> with a passion for visual storytelling, PHI Production House has grown from a small editing studio to a full-service content creation agency. We believe every frame matters, every cut tells a story, and every project deserves cinematic excellence.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
+                </article>
+
+                <!-- Card 2: Product Launch -->
+                <article class="portfolio-card reveal stagger-1" id="portfolioCard2">
+                    <div class="portfolio-card-inner">
+                        <div class="portfolio-card-bg">
+                            <div class="gradient-bg" style="background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0a0a0b 100%); width:100%; height:100%;"></div>
+                            <video preload="metadata" muted playsinline loop>
+                                <source src="assets/videos/product_launch/C0025_1_4.mp4#t=3" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="portfolio-card-overlay"></div>
+                        <div class="portfolio-card-content">
+                            <span class="portfolio-card-tag">Commercial</span>
+                            <h3 class="portfolio-card-title">Product Launch Campaigns</h3>
+                            <p class="portfolio-card-desc">High-impact product reveal videos designed to maximize brand awareness and conversion.</p>
+                        </div>
+                        <div class="portfolio-card-arrow">
+                            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                    <h3>Our Mission</h3>
-                    <p>To empower brands and creators with visual content that resonates, engages, and inspires action.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
+                </article>
+
+                <!-- Card 3: Car Delivery -->
+                <article class="portfolio-card reveal stagger-2" id="portfolioCard3">
+                    <div class="portfolio-card-inner">
+                        <div class="portfolio-card-bg">
+                            <div class="gradient-bg" style="background: linear-gradient(135deg, #0c0c1d 0%, #2e1065 50%, #0a0a0b 100%); width:100%; height:100%;"></div>
+                            <video preload="metadata" muted playsinline loop>
+                                <source src="assets/videos/car-edit-2.mp4#t=3" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="portfolio-card-overlay"></div>
+                        <div class="portfolio-card-content">
+                            <span class="portfolio-card-tag">Cinematic Edits</span>
+                            <h3 class="portfolio-card-title">Car Delivery Edits</h3>
+                            <p class="portfolio-card-desc">Premium automotive delivery videos with cinematic color grading and dynamic effects.</p>
+                        </div>
+                        <div class="portfolio-card-arrow">
+                            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
                     </div>
-                    <h3>Our Approach</h3>
-                    <p>We blend creativity with strategy, ensuring every project not only looks stunning but also achieves measurable results.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- ========== SERVICES ========== -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Premium <span class="text-gradient">Services</span></h2>
-                <p class="section-subtitle">End-to-end creative solutions tailored to make your brand stand out in the digital landscape.</p>
-            </div>
+            <span class="section-tag reveal">What We Do</span>
+            <h2 class="section-title reveal stagger-1">Premium <span class="gradient">Services</span></h2>
+            <p class="section-subtitle reveal stagger-2">End-to-end creative solutions engineered to make your brand dominate the digital landscape.</p>
+
             <div class="services-grid">
-                <div class="service-card" data-service="01">
+                <div class="service-card reveal stagger-1" id="serviceCard1">
                     <div class="service-number">01</div>
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg viewBox="0 0 24 24">
                             <rect x="2" y="3" width="20" height="14" rx="2"/>
                             <path d="M8 21h8M12 17v4"/>
                             <path d="M10 9l4 2.5L10 14V9z"/>
                         </svg>
                     </div>
                     <h3>Video Editing</h3>
-                    <p>Professional editing with cinematic color grading, seamless transitions, and compelling pacing that keeps audiences engaged from start to finish.</p>
+                    <p>Professional editing with cinematic color grading, seamless transitions, and compelling pacing that keeps audiences captivated from first frame to last.</p>
                     <ul class="service-features">
                         <li>Cinematic Color Grading</li>
                         <li>Motion Graphics & VFX</li>
                         <li>Sound Design & Mixing</li>
                     </ul>
                 </div>
-                <div class="service-card" data-service="02">
+
+                <div class="service-card reveal stagger-2" id="serviceCard2">
                     <div class="service-number">02</div>
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg viewBox="0 0 24 24">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
                     </div>
                     <h3>Content Creation</h3>
-                    <p>End-to-end content production from ideation to publishing. We create scroll-stopping content that drives engagement and grows your audience.</p>
+                    <p>End-to-end content production from ideation to publishing. We create scroll-stopping content that drives engagement and grows your audience exponentially.</p>
                     <ul class="service-features">
                         <li>YouTube Content Strategy</li>
                         <li>Social Media Reels & Shorts</li>
                         <li>Podcast Production</li>
                     </ul>
                 </div>
-                <div class="service-card" data-service="03">
+
+                <div class="service-card reveal stagger-3" id="serviceCard3">
                     <div class="service-number">03</div>
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="3"/>
                             <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
                         </svg>
                     </div>
                     <h3>Brand Identity</h3>
-                    <p>Complete visual branding solutions including logo design, brand guidelines, and consistent visual language across all platforms.</p>
+                    <p>Complete visual branding solutions including logo design, brand guidelines, and a cohesive visual language that resonates across all platforms.</p>
                     <ul class="service-features">
                         <li>Logo & Visual Identity</li>
                         <li>Brand Guidelines</li>
                         <li>Thumbnail Design</li>
                     </ul>
                 </div>
-                <div class="service-card" data-service="04">
+
+                <div class="service-card reveal stagger-4" id="serviceCard4">
                     <div class="service-number">04</div>
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-                            <polyline points="17 8 12 3 7 8"/>
-                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                         </svg>
                     </div>
                     <h3>Ad Films & Commercials</h3>
-                    <p>High-impact advertising content that converts viewers into customers. From concept to deployment, we craft ads that deliver ROI.</p>
+                    <p>High-impact advertising content that converts viewers into customers. From concept to deployment, we craft ads that deliver measurable ROI.</p>
                     <ul class="service-features">
                         <li>Product Commercials</li>
                         <li>Social Media Ads</li>
@@ -263,246 +344,208 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="why-us" id="why-us">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Work</span>
-                <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
-                <p class="section-subtitle">A glimpse into the cinematic experiences we've crafted for our clients.</p>
-            </div>
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="video">Video Editing</button>
-                <button class="filter-btn" data-filter="content">Content</button>
-                <button class="filter-btn" data-filter="brand">Branding</button>
-                <button class="filter-btn" data-filter="ads">Ad Films</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item large" data-category="video">
-                    <div class="portfolio-thumb portfolio-video-thumb" onclick="document.getElementById('grand-opening').scrollIntoView({behavior: 'smooth'})">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">Event Coverage</span>
-                            <h3>Grand Opening & Launch Events</h3>
-                            <p>Cinematic coverage for premium brand launches</p>
-                            <button class="portfolio-link">View All Videos &#8594;</button>
+            <span class="section-tag reveal">Why PHI</span>
+            <h2 class="section-title reveal stagger-1">Why Brands <span class="gradient">Choose Us</span></h2>
+            <p class="section-subtitle reveal stagger-2">We don't just deliver videos. We engineer visual experiences that build empires.</p>
+
+            <div class="why-us-grid">
+                <div class="why-us-content reveal-left">
+                    <h3>Every Frame Is Intentional. Every Cut Is Strategic.</h3>
+                    <p>At PHI Production House, we believe that creative excellence and strategic thinking aren't opposites — they're multipliers. Our team obsesses over every detail to ensure your content doesn't just look incredible, it drives real business results.</p>
+
+                    <div class="why-us-features">
+                        <div class="why-feature">
+                            <div class="why-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Lightning-Fast Delivery</h4>
+                                <p>We move at the speed of your ambition. Most projects delivered in 48–72 hours.</p>
+                            </div>
                         </div>
-                        <video class="portfolio-video-bg" preload="metadata" muted playsinline>
-                            <source src="assets/videos/grand_opening/C0005_2_3.mp4#t=3" type="video/mp4">
-                        </video>
-                        <div class="portfolio-play-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                            </svg>
+                        <div class="why-feature">
+                            <div class="why-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Unlimited Revisions</h4>
+                                <p>We don't stop until you're thrilled. Your satisfaction isn't optional — it's guaranteed.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="content">
-                    <div class="portfolio-thumb">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">Content Creation</span>
-                            <h3>YouTube Series</h3>
-                            <p>Documentary-style content series</p>
-                            <button class="portfolio-link">View Project &#8594;</button>
-                        </div>
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1">
-                                <polygon points="5 3 19 12 5 21 5 3"/>
-                            </svg>
+                        <div class="why-feature">
+                            <div class="why-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Premium Quality Standard</h4>
+                                <p>Cinema-grade tools, industry-best practices, and relentless attention to detail.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="brand">
-                    <div class="portfolio-thumb">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">Branding</span>
-                            <h3>Tech Startup Identity</h3>
-                            <p>Complete brand overhaul & visual system</p>
-                            <button class="portfolio-link">View Project &#8594;</button>
-                        </div>
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1">
-                                <polygon points="5 3 19 12 5 21 5 3"/>
-                            </svg>
-                        </div>
+
+                <div class="why-us-stats reveal-right">
+                    <div class="why-stat-card">
+                        <div class="why-stat-number"><span data-target="300" class="counter">0</span>+</div>
+                        <div class="why-stat-label">Projects Delivered</div>
                     </div>
-                </div>
-                <div class="portfolio-item" data-category="ads">
-                    <div class="portfolio-thumb portfolio-video-thumb" onclick="document.getElementById('product-launch').scrollIntoView({behavior: 'smooth'})">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">Ad Films</span>
-                            <h3>Product Launch Campaigns</h3>
-                            <p>High-energy product reveal commercials</p>
-                            <button class="portfolio-link">View All Videos &#8594;</button>
-                        </div>
-                        <video class="portfolio-video-bg" preload="metadata" muted playsinline>
-                            <source src="assets/videos/product_launch/C0025_1_4.mp4#t=3" type="video/mp4">
-                        </video>
-                        <div class="portfolio-play-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                            </svg>
-                        </div>
+                    <div class="why-stat-card">
+                        <div class="why-stat-number"><span data-target="50" class="counter">0</span>+</div>
+                        <div class="why-stat-label">Happy Clients</div>
                     </div>
-                </div>
-                <div class="portfolio-item" data-category="video">
-                    <div class="portfolio-thumb">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">Video Editing</span>
-                            <h3>Music Video</h3>
-                            <p>Visually stunning music video production</p>
-                            <button class="portfolio-link">View Project &#8594;</button>
-                        </div>
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1">
-                                <polygon points="5 3 19 12 5 21 5 3"/>
-                            </svg>
-                        </div>
+                    <div class="why-stat-card">
+                        <div class="why-stat-number"><span data-target="98" class="counter">0</span>%</div>
+                        <div class="why-stat-label">Client Retention</div>
                     </div>
-                </div>
-                <div class="portfolio-item large" data-category="content">
-                    <div class="portfolio-thumb">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">Content</span>
-                            <h3>Corporate Documentary</h3>
-                            <p>Brand story documentary for Fortune 500</p>
-                            <button class="portfolio-link">View Project &#8594;</button>
-                        </div>
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1">
-                                <polygon points="5 3 19 12 5 21 5 3"/>
-                            </svg>
-                        </div>
+                    <div class="why-stat-card">
+                        <div class="why-stat-number"><span data-target="48" class="counter">0</span>h</div>
+                        <div class="why-stat-label">Avg. Turnaround</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Grand Opening & Launch Events Section -->
-    <section class="car-edits" id="grand-opening">
+    <!-- ========== FOUNDER / ABOUT ========== -->
+    <section class="founder" id="about">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Showreel</span>
-                <h2 class="section-title">Grand Opening & <span class="text-gradient">Launch Events</span></h2>
-                <p class="section-subtitle">Premium event coverage with cinematic transitions, dynamic storytelling, and stunning visuals.</p>
+            <span class="section-tag reveal">The Founder</span>
+            <h2 class="section-title reveal stagger-1">Meet the Mind Behind <span class="gradient">PHI</span></h2>
+
+            <div class="founder-grid">
+                <div class="founder-image-wrapper reveal-left">
+                    <div class="founder-image-frame">
+                        <img src="assets/founder-kishu-gupta.jpg" alt="Kishu Gupta — Founder of PHI Production House" loading="lazy">
+                        <div class="founder-image-overlay"></div>
+                    </div>
+                    <div class="founder-image-accent"></div>
+                    <div class="founder-image-glow"></div>
+                </div>
+
+                <div class="founder-info reveal-right">
+                    <h3>Kishu Gupta</h3>
+                    <span class="founder-role">Founder & Creative Director</span>
+                    <p>With a relentless passion for visual storytelling and a deep understanding of what makes content resonate, Kishu Gupta founded PHI Production House to bridge the gap between raw creative vision and premium production quality.</p>
+                    <p>What started as a small editing studio driven by an obsession with cinematic excellence has evolved into a full-service creative agency trusted by brands, creators, and businesses across India.</p>
+
+                    <div class="founder-quote">
+                        <p>"Every frame is an opportunity to tell a story. Every cut is a chance to evoke emotion. At PHI, we don't just edit — we craft visual experiences that leave lasting impressions."</p>
+                    </div>
+                </div>
             </div>
-            <div class="car-edits-grid">
-                <div class="video-card" id="goCard1">
+        </div>
+    </section>
+
+    <!-- ========== GRAND OPENING SHOWREEL ========== -->
+    <section class="showreel" id="grand-opening">
+        <div class="container">
+            <span class="section-tag reveal">Showreel</span>
+            <h2 class="section-title reveal stagger-1">Grand Opening & <span class="gradient">Launch Events</span></h2>
+            <p class="section-subtitle reveal stagger-2">Premium event coverage with cinematic transitions, dynamic storytelling, and stunning visuals.</p>
+
+            <div class="showreel-grid">
+                <div class="video-card reveal stagger-1" id="goCard1">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo1" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/C0005_2_3.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay1" onclick="toggleVideo('goVideo1', 'goOverlay1')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Launch Event #1</h3>
                 </div>
-                <div class="video-card" id="goCard2">
+                <div class="video-card reveal stagger-2" id="goCard2">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo2" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/C0098_2.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay2" onclick="toggleVideo('goVideo2', 'goOverlay2')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Launch Event #2</h3>
                 </div>
-                <div class="video-card" id="goCard3">
+                <div class="video-card reveal stagger-3" id="goCard3">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo3" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/C0171_1.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay3" onclick="toggleVideo('goVideo3', 'goOverlay3')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Launch Event #3</h3>
                 </div>
-                <div class="video-card" id="goCard4">
+                <div class="video-card reveal" id="goCard4">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo4" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/int4.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay4" onclick="toggleVideo('goVideo4', 'goOverlay4')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Launch Event #4</h3>
                 </div>
-                <div class="video-card" id="goCard5">
+                <div class="video-card reveal stagger-1" id="goCard5">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo5" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/C0007_2_3.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay5" onclick="toggleVideo('goVideo5', 'goOverlay5')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Launch Event #5</h3>
                 </div>
-                <div class="video-card" id="goCard6">
+                <div class="video-card reveal stagger-2" id="goCard6">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo6" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/C0262_1.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay6" onclick="toggleVideo('goVideo6', 'goOverlay6')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Launch Event #6</h3>
                 </div>
-                <div class="video-card" id="goCard7">
+                <div class="video-card reveal stagger-3" id="goCard7">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo7" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/C0044_1_1.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay7" onclick="toggleVideo('goVideo7', 'goOverlay7')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Launch Event #7</h3>
                 </div>
-                <div class="video-card" id="goCard8">
+                <div class="video-card reveal stagger-4" id="goCard8">
                     <div class="video-wrapper">
                         <video class="video-player" id="goVideo8" preload="metadata" playsinline>
                             <source src="assets/videos/grand_opening/C0091_2.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="goOverlay8" onclick="toggleVideo('goVideo8', 'goOverlay8')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
@@ -512,115 +555,100 @@
         </div>
     </section>
 
-    <!-- Product Launch Campaigns Section -->
-    <section class="car-edits" id="product-launch">
+    <!-- ========== PRODUCT LAUNCH SHOWREEL ========== -->
+    <section class="showreel" id="product-launch">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Showcase</span>
-                <h2 class="section-title">Product Launch <span class="text-gradient">Campaigns</span></h2>
-                <p class="section-subtitle">High-energy, captivating product reveal commercials designed to maximize impact.</p>
-            </div>
-            <div class="car-edits-grid">
-                <div class="video-card" id="plCard1">
+            <span class="section-tag reveal">Showcase</span>
+            <h2 class="section-title reveal stagger-1">Product Launch <span class="gradient">Campaigns</span></h2>
+            <p class="section-subtitle reveal stagger-2">High-energy, captivating product reveal commercials designed to maximize impact.</p>
+
+            <div class="showreel-grid">
+                <div class="video-card reveal stagger-1" id="plCard1">
                     <div class="video-wrapper">
                         <video class="video-player" id="plVideo1" preload="metadata" playsinline>
                             <source src="assets/videos/product_launch/C0025_1_4.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="plOverlay1" onclick="toggleVideo('plVideo1', 'plOverlay1')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Product Launch #1</h3>
                 </div>
-                <div class="video-card" id="plCard2">
+                <div class="video-card reveal stagger-2" id="plCard2">
                     <div class="video-wrapper">
                         <video class="video-player" id="plVideo2" preload="metadata" playsinline>
                             <source src="assets/videos/product_launch/C0069_1_2.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="plOverlay2" onclick="toggleVideo('plVideo2', 'plOverlay2')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Product Launch #2</h3>
                 </div>
-                <div class="video-card" id="plCard3">
+                <div class="video-card reveal stagger-3" id="plCard3">
                     <div class="video-wrapper">
                         <video class="video-player" id="plVideo3" preload="metadata" playsinline>
                             <source src="assets/videos/product_launch/C0069_1_3.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="plOverlay3" onclick="toggleVideo('plVideo3', 'plOverlay3')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Product Launch #3</h3>
                 </div>
-                <div class="video-card" id="plCard4">
+                <div class="video-card reveal" id="plCard4">
                     <div class="video-wrapper">
                         <video class="video-player" id="plVideo4" preload="metadata" playsinline>
                             <source src="assets/videos/product_launch/manago_c01.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="plOverlay4" onclick="toggleVideo('plVideo4', 'plOverlay4')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Product Launch #4</h3>
                 </div>
-                <div class="video-card" id="plCard5">
+                <div class="video-card reveal stagger-1" id="plCard5">
                     <div class="video-wrapper">
                         <video class="video-player" id="plVideo5" preload="metadata" playsinline>
                             <source src="assets/videos/product_launch/manago03.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="plOverlay5" onclick="toggleVideo('plVideo5', 'plOverlay5')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Product Launch #5</h3>
                 </div>
-                <div class="video-card" id="plCard6">
+                <div class="video-card reveal stagger-2" id="plCard6">
                     <div class="video-wrapper">
                         <video class="video-player" id="plVideo6" preload="metadata" playsinline>
                             <source src="assets/videos/product_launch/C0042_1.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="plOverlay6" onclick="toggleVideo('plVideo6', 'plOverlay6')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
                     <h3>Product Launch #6</h3>
                 </div>
-                <div class="video-card" id="plCard7">
+                <div class="video-card reveal stagger-3" id="plCard7">
                     <div class="video-wrapper">
                         <video class="video-player" id="plVideo7" preload="metadata" playsinline>
                             <source src="assets/videos/product_launch/vid_95e55.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="plOverlay7" onclick="toggleVideo('plVideo7', 'plOverlay7')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
@@ -630,211 +658,174 @@
         </div>
     </section>
 
-    <!-- Car Delivery Edits Section -->
-    <section class="car-edits" id="car-edits">
+    <!-- ========== CAR DELIVERY SHOWREEL ========== -->
+    <section class="showreel" id="car-edits">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Showreel</span>
-                <h2 class="section-title">Car Delivery <span class="text-gradient">Edits</span></h2>
-                <p class="section-subtitle">Premium car delivery videos crafted with cinematic transitions, dynamic effects, and stunning color grading.</p>
-            </div>
-            <div class="car-edits-grid">
-                <div class="video-card" id="videoCard1">
-                    <div class="video-wrapper">
-                        <video class="video-player" id="video1" preload="metadata" playsinline>
-                            <source src="assets/videos/car-edit-1.mp4#t=3" type="video/mp4">
-                        </video>
-                        <div class="video-overlay" id="overlay1" onclick="toggleVideo('video1', 'overlay1')">
-                            <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Car Delivery Edit #1</h3>
-                </div>
-                <div class="video-card" id="videoCard2">
+            <span class="section-tag reveal">Showreel</span>
+            <h2 class="section-title reveal stagger-1">Car Delivery <span class="gradient">Edits</span></h2>
+            <p class="section-subtitle reveal stagger-2">Premium car delivery videos crafted with cinematic transitions, dynamic effects, and stunning color grading.</p>
+
+            <div class="showreel-grid">
+                <div class="video-card reveal stagger-1" id="videoCard2">
                     <div class="video-wrapper">
                         <video class="video-player" id="video2" preload="metadata" playsinline>
                             <source src="assets/videos/car-edit-2.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="overlay2" onclick="toggleVideo('video2', 'overlay2')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
-                    <h3>Car Delivery Edit #2</h3>
+                    <h3>Car Delivery Edit #1</h3>
                 </div>
-                <div class="video-card" id="videoCard3">
+                <div class="video-card reveal stagger-2" id="videoCard3">
                     <div class="video-wrapper">
                         <video class="video-player" id="video3" preload="metadata" playsinline>
                             <source src="assets/videos/car-edit-3.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="overlay3" onclick="toggleVideo('video3', 'overlay3')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
-                    <h3>Car Delivery Edit #3</h3>
+                    <h3>Car Delivery Edit #2</h3>
                 </div>
-                <div class="video-card" id="videoCard4">
+                <div class="video-card reveal stagger-3" id="videoCard4">
                     <div class="video-wrapper">
                         <video class="video-player" id="video4" preload="metadata" playsinline>
                             <source src="assets/videos/car-edit-4.mp4#t=3" type="video/mp4">
                         </video>
                         <div class="video-overlay" id="overlay4" onclick="toggleVideo('video4', 'overlay4')">
                             <div class="play-button-circle">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6 3 20 12 6 21 6 3" fill="white"/></svg>
                             </div>
                         </div>
                     </div>
-                    <h3>Car Delivery Edit #4</h3>
+                    <h3>Car Delivery Edit #3</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- ========== PROCESS TIMELINE ========== -->
     <section class="process" id="process">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">How We Work</span>
-                <h2 class="section-title">Our Creative <span class="text-gradient">Process</span></h2>
-                <p class="section-subtitle">A proven workflow designed to transform your ideas into compelling visual content.</p>
-            </div>
+            <span class="section-tag reveal">How We Work</span>
+            <h2 class="section-title reveal stagger-1">Our Creative <span class="gradient">Process</span></h2>
+            <p class="section-subtitle reveal stagger-2">A proven workflow designed to transform your ideas into compelling visual content.</p>
+
             <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Discovery & Strategy</h3>
-                        <p>We deep-dive into your brand, audience, and goals to craft a creative strategy that aligns with your vision.</p>
+                <div class="process-step reveal stagger-1">
+                    <div class="process-step-dot"></div>
+                    <span class="process-step-number">Step 01</span>
+                    <h3>Discovery & Strategy</h3>
+                    <p>We deep-dive into your brand, audience, and goals to craft a creative strategy that aligns perfectly with your vision and market positioning.</p>
+                </div>
+                <div class="process-step reveal stagger-2">
+                    <div class="process-step-dot"></div>
+                    <span class="process-step-number">Step 02</span>
+                    <h3>Concept & Scripting</h3>
+                    <p>Our creative team develops compelling concepts, scripts, and storyboards that bring your story to life with maximum emotional impact.</p>
+                </div>
+                <div class="process-step reveal stagger-3">
+                    <div class="process-step-dot"></div>
+                    <span class="process-step-number">Step 03</span>
+                    <h3>Production & Editing</h3>
+                    <p>Using industry-leading tools and techniques, we produce and edit your content with cinematic precision and meticulous attention to detail.</p>
+                </div>
+                <div class="process-step reveal stagger-4">
+                    <div class="process-step-dot"></div>
+                    <span class="process-step-number">Step 04</span>
+                    <h3>Review & Delivery</h3>
+                    <p>We collaborate closely with you through revisions to ensure the final product not only meets expectations — it exceeds them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <span class="section-tag reveal">Client Love</span>
+            <h2 class="section-title reveal stagger-1">What Our <span class="gradient">Clients Say</span></h2>
+            <p class="section-subtitle reveal stagger-2">Don't just take our word for it — hear from the brands and creators we've partnered with.</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal stagger-1">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"PHI Production House completely transformed our brand's visual presence. Their attention to detail and creative vision is unmatched. Every video they produce is a masterpiece."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">RK</div>
+                        <div class="testimonial-author-info">
+                            <h4>Rahul Kumar</h4>
+                            <span>CEO, TechVista Solutions</span>
+                        </div>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Concept & Scripting</h3>
-                        <p>Our creative team develops compelling concepts, scripts, and storyboards that bring your story to life.</p>
+
+                <div class="testimonial-card reveal stagger-2">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Working with PHI was a game-changer for our YouTube channel. Our engagement increased by 300% after they took over our content production. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">PS</div>
+                        <div class="testimonial-author-info">
+                            <h4>Priya Sharma</h4>
+                            <span>Content Creator, 1M+ Subscribers</span>
+                        </div>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Production & Editing</h3>
-                        <p>Using industry-leading tools and techniques, we produce and edit content with cinematic precision.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Review & Delivery</h3>
-                        <p>We collaborate closely with you through revisions to ensure the final product exceeds expectations.</p>
+
+                <div class="testimonial-card reveal stagger-3">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The ad film PHI created for our product launch exceeded all expectations. The cinematic quality and strategic storytelling drove a 150% increase in our conversion rates."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">AV</div>
+                        <div class="testimonial-author-info">
+                            <h4>Aditya Verma</h4>
+                            <span>Marketing Head, LuxeCart</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <!-- ========== FINAL CTA ========== -->
+    <section class="final-cta">
+        <div class="final-cta-bg"></div>
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Client Love</span>
-                <h2 class="section-title">What Our <span class="text-gradient">Clients Say</span></h2>
-                <p class="section-subtitle">Don't just take our word for it — hear from the brands and creators we've worked with.</p>
-            </div>
-            <div class="testimonials-slider" id="testimonialsSlider">
-                <div class="testimonial-track" id="testimonialTrack">
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">"PHI Production House completely transformed our brand's visual presence. Their attention to detail and creative vision is unmatched. Every video they produce is a masterpiece."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">RK</div>
-                            <div class="author-info">
-                                <h4>Rahul Kumar</h4>
-                                <span>CEO, TechVista Solutions</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">"Working with PHI was an absolute game-changer for our YouTube channel. Our engagement increased by 300% after they took over our content production. Highly recommended!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">PS</div>
-                            <div class="author-info">
-                                <h4>Priya Sharma</h4>
-                                <span>Content Creator, 1M+ Subscribers</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">"The ad film PHI created for our product launch exceeded all expectations. The ROI was incredible — our sales increased by 150% within the first month of the campaign."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">AM</div>
-                            <div class="author-info">
-                                <h4>Arjun Mehta</h4>
-                                <span>Marketing Head, StyleCraft</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <button class="slider-btn" id="prevBtn" aria-label="Previous testimonial">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M19 12H5M12 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    <div class="slider-dots" id="sliderDots"></div>
-                    <button class="slider-btn" id="nextBtn" aria-label="Next testimonial">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title reveal">Ready to Create Something <span class="gradient">Extraordinary</span>?</h2>
+                <p class="reveal stagger-1">Let's collaborate to bring your boldest vision to life. Every iconic project starts with a single conversation.</p>
+                <div class="reveal stagger-2">
+                    <a href="#contact" class="btn btn-primary btn-large" id="finalCtaBtn">
+                        <span>Start Your Project</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-card">
-                <div class="cta-glow"></div>
-                <h2>Ready to Create Something <span class="text-gradient">Extraordinary</span>?</h2>
-                <p>Let's collaborate to bring your vision to life. Every great project starts with a conversation.</p>
-                <a href="#contact" class="btn btn-primary btn-large">
-                    <span>Start Your Project</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- ========== CONTACT ========== -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
-                <p class="section-subtitle">Have a project in mind? We'd love to hear about it. Fill out the form below and we'll get back to you within 24 hours.</p>
-            </div>
+            <span class="section-tag reveal">Get In Touch</span>
+            <h2 class="section-title reveal stagger-1">Let's <span class="gradient">Connect</span></h2>
+            <p class="section-subtitle reveal stagger-2">Have a project in mind? We'd love to hear about it. Fill out the form and we'll get back to you within 24 hours.</p>
+
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-info reveal-left">
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <svg viewBox="0 0 24 24">
                                 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                         </div>
@@ -845,7 +836,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <svg viewBox="0 0 24 24">
                                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
                         </div>
@@ -856,7 +847,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <svg viewBox="0 0 24 24">
                                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
@@ -866,48 +857,37 @@
                             <p>Bhopal, Madhya Pradesh, India</p>
                         </div>
                     </div>
+
                     <div class="social-links">
-                        <a href="https://www.instagram.com/phi_productionhouse/" target="_blank" class="social-link" aria-label="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                                <circle cx="12" cy="12" r="5"/>
-                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-                            </svg>
+                        <a href="https://www.instagram.com/phi_productionhouse/" target="_blank" class="social-link" aria-label="Instagram" id="socialInstagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
                         </a>
-                        <a href="https://www.youtube.com/@phiproductionhouse" target="_blank" class="social-link" aria-label="YouTube">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29.94 29.94 0 001 12a29.94 29.94 0 00.46 5.58 2.78 2.78 0 001.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-2A29.94 29.94 0 0023 12a29.94 29.94 0 00-.46-5.58z"/>
-                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
-                            </svg>
+                        <a href="https://www.youtube.com/@phiproductionhouse" target="_blank" class="social-link" aria-label="YouTube" id="socialYouTube">
+                            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29.94 29.94 0 001 12a29.94 29.94 0 00.46 5.58 2.78 2.78 0 001.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-2A29.94 29.94 0 0023 12a29.94 29.94 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 10.768L20 4"/>
-                            </svg>
+                        <a href="#" class="social-link" aria-label="Twitter / X" id="socialTwitter">
+                            <svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 10.768L20 4"/></svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
-                                <rect x="2" y="9" width="4" height="12"/>
-                                <circle cx="4" cy="4" r="2"/>
-                            </svg>
+                        <a href="#" class="social-link" aria-label="LinkedIn" id="socialLinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+
+                <form class="contact-form reveal-right" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <label for="contactName">Full Name</label>
+                            <input type="text" id="contactName" name="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="service">Service Interested In</label>
-                        <select id="service" name="service">
+                        <label for="contactService">Service Interested In</label>
+                        <select id="contactService" name="service">
                             <option value="">Select a service</option>
                             <option value="video-editing">Video Editing</option>
                             <option value="content-creation">Content Creation</option>
@@ -917,12 +897,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                        <label for="contactMessage">Your Message</label>
+                        <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">
+                    <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">
                         <span>Send Message</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
                         </svg>
                     </button>
@@ -931,7 +911,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -940,19 +920,19 @@
                         <span class="logo-phi">PHI</span>
                         <span class="logo-sub">Production House</span>
                     </a>
-                    <p>Crafting cinematic stories that captivate audiences and elevate brands. Your vision, our expertise.</p>
+                    <p>Crafting cinematic stories that captivate audiences and elevate brands. Your vision, our expertise — together, extraordinary.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Work</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-col">
                     <h4>Services</h4>
                     <ul>
                         <li><a href="#services">Video Editing</a></li>
@@ -961,7 +941,7 @@
                         <li><a href="#services">Ad Films</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-col">
                     <h4>Connect</h4>
                     <ul>
                         <li><a href="https://www.instagram.com/phi_productionhouse/" target="_blank">Instagram</a></li>
@@ -973,7 +953,10 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 PHI Production House. All rights reserved.</p>
-                <p>Designed with &#9829; for visual storytelling</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -983,9 +966,7 @@
         <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
         <div class="lightbox-content">
             <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close video">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 6L6 18M6 6l12 12"/>
-                </svg>
+                <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </button>
             <div class="lightbox-video-container">
                 <video class="lightbox-video" id="lightboxVideo" controls playsinline>
