@@ -63,14 +63,26 @@
     const W = () => container.clientWidth || window.innerWidth || 1;
     const H = () => container.clientHeight || window.innerHeight || 1;
 
+    const isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    function getCameraParams() {
+      const aspect = W() / H();
+      if (aspect < 0.65) {
+        return { fov: 66, z: 25, y: 5.5 };
+      } else if (aspect < 1.0) {
+        return { fov: 54, z: 23, y: 5.8 };
+      }
+      return { fov: 42, z: 22, y: 6 };
+    }
+
     /* ── Renderer ── */
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
     renderer.setSize(W(), H());
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 0.85;
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.enabled = !isMobile;
+    if (!isMobile) renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
 
     /* ── Scene ── */
@@ -79,8 +91,9 @@
     scene.fog = new THREE.FogExp2(PAL.night, 0.018);
 
     /* ── Camera ── */
-    const camera = new THREE.PerspectiveCamera(42, W() / H(), 0.1, 200);
-    camera.position.set(0, 6, 22);
+    const initCam = getCameraParams();
+    const camera = new THREE.PerspectiveCamera(initCam.fov, W() / H(), 0.1, 200);
+    camera.position.set(0, initCam.y, initCam.z);
     camera.lookAt(0, 4, 0);
 
     /* ── Post-Processing (Bloom) ── */
@@ -88,9 +101,9 @@
     composer.addPass(new RenderPass(scene, camera));
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(W(), H()),
-      1.2,   // strength
-      0.5,   // radius
-      0.35   // threshold
+      isMobile ? 0.9 : 1.2,   // strength
+      0.5,                    // radius
+      0.35                    // threshold
     );
     composer.addPass(bloomPass);
 
@@ -273,7 +286,7 @@
     /* ============================================
        RAIN SYSTEM
        ============================================ */
-    const RAIN_COUNT = 4000;
+    const RAIN_COUNT = isMobile ? 1200 : 4000;
     const rainGeo = new THREE.BufferGeometry();
     const rainPos = new Float32Array(RAIN_COUNT * 3);
     const rainVel = new Float32Array(RAIN_COUNT);
@@ -611,11 +624,19 @@
 
     /* ── Resize ── */
     function onResize() {
-      camera.aspect = W() / H();
+      const width = W();
+      const height = H();
+      if (!width || !height) return;
+      const aspect = width / height;
+      camera.aspect = aspect;
+      const camParams = getCameraParams();
+      camera.fov = camParams.fov;
+      camera.position.z = camParams.z;
+      camera.position.y = camParams.y;
       camera.updateProjectionMatrix();
-      renderer.setSize(W(), H());
-      composer.setSize(W(), H());
-      bloomPass.resolution.set(W(), H());
+      renderer.setSize(width, height);
+      composer.setSize(width, height);
+      bloomPass.resolution.set(width, height);
     }
     window.addEventListener('resize', onResize);
 
