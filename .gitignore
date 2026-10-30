@@ -1,2 +1,6 @@
 # Large video files - not suitable for Git
 assets/videos/
+node_modules/
+tools/
+package.json
+package-lock.json

@@ -21,6 +21,7 @@
 </a>
 <nav class="nav-desktop">
 <a href="#featured">Featured</a>
+<a href="#car-delivery">Showreel</a>
 <a href="#work">Work</a>
 <a href="#services">Services</a>
 <a href="#about">About</a>
@@ -38,7 +39,7 @@
 <div class="mobile-nav-panel">
 <nav class="mobile-nav-links">
 <a href="#featured" class="mobile-nav-link"><span>01</span> Featured</a>
-<a href="#car-delivery" class="mobile-nav-link"><span>02</span> Automotive</a>
+<a href="#car-delivery" class="mobile-nav-link"><span>02</span> Showreel</a>
 <a href="#work" class="mobile-nav-link"><span>03</span> Selected Work</a>
 <a href="#services" class="mobile-nav-link"><span>04</span> Services</a>
 <a href="#about" class="mobile-nav-link"><span>05</span> About</a>
@@ -55,23 +56,30 @@
 </div>
 <main>
 <!-- ═══════════════════════════════════════
-     HERO — Temple Night Scene + Copy
+     HERO — Full Cat with 2-Line Side Overlay
      ═══════════════════════════════════════ -->
-<section class="hero hero--temple">
-  <!-- Three.js Temple Night Scene backdrop -->
-  <div class="shader-frame" aria-hidden="true"></div>
-  <!-- Gradient overlay for text readability -->
-  <div class="hero-overlay"></div>
-  <!-- Content layer -->
-  <div class="hero-copy hero-copy--over">
-    <p class="eyebrow">Video editor for performance marketing agencies</p>
-    <h1>Scroll-stopping edits for brands that want to be remembered.</h1>
-    <p class="lede">High-retention ads, UGC edits, Reels and social creatives — crafted for attention and performance.</p>
-    <div class="actions">
-      <a class="button solid" href="#work">View selected work ↓</a>
+<section class="hero hero--cat" id="hero" aria-label="Hero">
+  <!-- Fullscreen Interactive Cat Canvas -->
+  <div class="hero-cat-fullscreen">
+    <canvas id="catCanvas" class="cat-canvas" aria-label="Interactive Cat Animation"></canvas>
+  </div>
+
+  <!-- 2-Line Typography Overlay on the Side -->
+  <div class="hero-side-overlay">
+    <p class="hero-overlay-eyebrow">Creative Video Agency</p>
+    <h1 class="hero-overlay-title">
+      Scroll-Stopping Edits.<br>
+      <span class="hero-title-italic">Crafted for Retention.</span>
+    </h1>
+    <div class="hero-overlay-actions">
+      <a class="button solid small-btn" href="#work">Explore Work ↓</a>
     </div>
   </div>
-  <div class="expertise">Meta ads <b>•</b> UGC edits <b>•</b> Reels & shorts <b>•</b> Motion graphics</div>
+
+  <!-- Bottom Interaction Hint -->
+  <div class="hero-bottom-hint">
+    <span>✦ MOVE CURSOR TO INTERACT ✦</span>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════
@@ -101,17 +109,56 @@
 </section>
 
 <!-- ═══════════════════════════════════════
-     CAR DELIVERY — preserved exactly
+     SHOWREEL / AUTOMOTIVE SECTION
      ═══════════════════════════════════════ -->
-<section class="showreel section" id="car-delivery">
-<div>
-<p class="eyebrow">Automotive</p>
-<h2>Car delivery.<br>Built to feel premium.</h2>
-<p class="lede">A cinematic automotive edit with deliberate pacing, transitions and colour work.</p>
-</div>
-<div class="youtube-card reel" style="overflow:hidden;background:#101014">
-<iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/U1-Z49ZNBRI?playsinline=1&rel=0" title="Car delivery edit by PHI Production House" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<section class="showreel-section" id="car-delivery">
+  <div class="showreel-container">
+    <div class="topline">
+      <p class="eyebrow">Signature Showreel</p>
+      <i></i>
+      <span>Automotive Edit</span>
+    </div>
+
+    <div class="showreel-grid">
+      <div class="showreel-content">
+        <span class="showreel-badge">Featured Cinematic Film</span>
+        <h2>Car delivery.<br><span class="showreel-title-accent">Built to feel premium.</span></h2>
+        <p class="lede">A high-impact cinematic automotive cut crafted with deliberate pacing, dynamic match cuts, bespoke sound design and precision color grading.</p>
+
+        <div class="showreel-specs">
+          <span class="spec-pill"><span>🎨</span> DaVinci Color Grade</span>
+          <span class="spec-pill"><span>🔊</span> Bespoke Sound Foley</span>
+          <span class="spec-pill"><span>✂</span> Kinetic Pacing</span>
+          <span class="spec-pill"><span>⚡</span> 4K Master / 60fps</span>
+        </div>
+
+        <div class="showreel-actions">
+          <a class="button solid" href="https://www.youtube.com/watch?v=U1-Z49ZNBRI" target="_blank" rel="noopener">Watch Full Film ↗</a>
+          <a class="button line" href="#contact">Discuss a project ↓</a>
+        </div>
+      </div>
+
+      <div class="showreel-player-wrap">
+        <div class="showreel-player-card">
+          <div class="showreel-player-header">
+            <div class="player-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="player-title">
+              <span class="live-indicator"></span>
+              <span>4K SHOWREEL • SOUND ON</span>
+            </div>
+            <div class="player-format">16:9 UHD</div>
+          </div>
+          <div class="youtube-card reel-media">
+            <iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/U1-Z49ZNBRI?playsinline=1&rel=0" title="Car delivery edit by PHI Production House" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════
@@ -126,8 +173,8 @@
 </div>
 <h2>A few edits that do the talking.</h2>
 <div class="work-grid">
-<article class="work-card">
-<div class="youtube-card" style="height:330px;overflow:hidden;background:#101014" data-video-slot="product">
+<article class="work-card work-card--featured">
+<div class="youtube-card" data-video-slot="product">
 <iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/47cKJLnoSP8?playsinline=1&rel=0" title="Product edit by PHI Production House" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <div class="meta">
@@ -138,8 +185,8 @@
 <b>01</b>
 </div>
 </article>
-<article class="work-card">
-<div class="youtube-card" style="height:330px;overflow:hidden;background:#101014" data-video-slot="event">
+<article class="work-card work-card--featured">
+<div class="youtube-card" data-video-slot="event">
 <iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/tvVXJpI4Al8?playsinline=1&rel=0" title="Launch event edit by PHI Production House" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <div class="meta">
@@ -150,8 +197,8 @@
 <b>02</b>
 </div>
 </article>
-<article class="work-card">
-<div class="youtube-card" style="height:330px;overflow:hidden;background:#101014" data-video-slot="event-2">
+<article class="work-card work-card--compact">
+<div class="youtube-card" data-video-slot="event-2">
 <iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/MMxhiz9Ejtc?playsinline=1&rel=0" title="Launch event edit 2 by PHI Production House" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <div class="meta">
@@ -162,8 +209,8 @@
 <b>03</b>
 </div>
 </article>
-<article class="work-card">
-<div class="youtube-card" style="height:330px;overflow:hidden;background:#101014" data-video-slot="event-3">
+<article class="work-card work-card--compact">
+<div class="youtube-card" data-video-slot="event-3">
 <iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/Q0dfwkpF8x0?playsinline=1&rel=0" title="Launch event edit 3 by PHI Production House" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <div class="meta">
@@ -174,8 +221,8 @@
 <b>04</b>
 </div>
 </article>
-<article class="work-card">
-<div class="youtube-card" style="height:330px;overflow:hidden;background:#101014">
+<article class="work-card work-card--compact">
+<div class="youtube-card">
 <iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/OyIu-Fz3hh0?playsinline=1&rel=0" title="Building effect edit by PHI Production House" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 </iframe>
 </div>
@@ -252,17 +299,7 @@
 <a href="https://www.instagram.com/phi_productionhouse/">Instagram ↗</a>
 <a href="https://www.youtube.com/@phiproductionhouse">YouTube ↗</a>
 </footer>
-<script src="script.js">
-</script>
-<!-- Three.js r149 Temple Night Scene (ES module) -->
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.149.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.149.0/examples/jsm/"
-  }
-}
-</script>
-<script type="module" src="js/temple-night-scene.js"></script>
+<script src="script.js"></script>
+<script src="js/cat-frames.js"></script>
 </body>
 </html>
